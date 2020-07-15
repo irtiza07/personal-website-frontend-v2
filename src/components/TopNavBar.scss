@@ -1,0 +1,20 @@
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  padding-right: 2vw;
+  padding-left: 2vw;
+  font-size: 40px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 16vw;
+  margin-left: auto;
+  font-size: 24px;
+  font-weight: 500;
+}

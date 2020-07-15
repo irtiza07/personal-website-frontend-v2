@@ -1,0 +1,12 @@
+.browser-container {
+  height: 100vh;
+  width: 96vw;
+  margin-top: 6vh;
+  border: 3px solid #f4f4f4;
+  box-sizing: border-box;
+  border-radius: 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
