@@ -1,0 +1,81 @@
+.blogs-container {
+  margin: 0;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  padding-top: 3vw;
+}
+.introduction-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.summary-container {
+  display: flex;
+  flex-direction: row;
+}
+.intro-text-container {
+  font-weight: 500;
+  color: #000000;
+  opacity: 0.7;
+  margin-left: 1.5vw;
+}
+.intro-button {
+  background-color: #1591ff;
+  width: 15vw;
+  height: 4vw;
+  outline: none;
+  border: none;
+  color: white;
+  border-radius: 0.8vw;
+  font-weight: 500;
+  font-size: 2.2vw;
+  text-align: center;
+  cursor: pointer;
+}
+.profile-icon {
+  width: 8vw;
+  height: 8vw;
+}
+.name-text {
+  font-weight: 500;
+  font-size: 2.9vw;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 1vh;
+  letter-spacing: 0.1vw;
+}
+.article-count-text {
+  font-weight: 500;
+  font-size: 1.7vw;
+  color: #737373;
+  opacity: 0.7;
+  margin: 0;
+  letter-spacing: 0.1vw;
+}
+.heading {
+  font-weight: 600;
+  font-size: 2.9vw;
+  color: #37353e;
+}
+.filters-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3vh;
+}
+.cat-button {
+  &:hover {
+    color: gray;
+  }
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  outline: none;
+  border: none;
+  font-size: 1.7vw;
+  margin-left: 2vw;
+}
+.cat-button-active {
+  background-color: #1591ff;
+  border-radius: 0.8vw;
+  color: white;
+}

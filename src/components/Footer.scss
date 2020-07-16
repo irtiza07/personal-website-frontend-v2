@@ -1,0 +1,28 @@
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+.footer-illustration {
+  width: 50vw;
+  height: 45vh;
+}
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vh;
+}
+.socials-header {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3.2vw;
+  color: #000000;
+}
+.socials-link {
+  font-weight: normal;
+  font-size: 2.2vw;
+  text-decoration-line: underline;
+  color: #000000;
+  line-height: 5vh;
+  cursor: pointer;
+}

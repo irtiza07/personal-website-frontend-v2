@@ -11,6 +11,7 @@ import {
   THOUGHTS_TAB,
 } from "../utils/constants";
 import "./Browser.scss";
+import MailingList from "./MailingList";
 
 export default function Browser() {
   const [activeTab, setActiveTab] = useState(BLOG_TAB);
@@ -25,6 +26,8 @@ export default function Browser() {
       {activeTab === PROJECT_TAB && <ProjectTab />}
       {activeTab === RESUME_TAB && <ResumeTab />}
       {activeTab === THOUGHTS_TAB && <ThoughtsTab />}
+      <hr style={{ border: "1px solid #EDEDED" }} />
+      <MailingList />
     </div>
   );
 }

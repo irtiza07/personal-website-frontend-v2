@@ -4,6 +4,7 @@ import Banner from "./components/Banner";
 import Browser from "./components/Browser";
 
 import "./App.css";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <TopNavBar />
       <Banner />
       <Browser />
+      <Footer />
     </div>
   );
 }

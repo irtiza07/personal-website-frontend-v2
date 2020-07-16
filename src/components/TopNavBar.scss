@@ -3,7 +3,7 @@
   flex-direction: row;
   padding-right: 2vw;
   padding-left: 2vw;
-  font-size: 40px;
+  font-size: 3vw;
   font-weight: 600;
   color: #000000;
 }
@@ -13,8 +13,14 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  width: 16vw;
+  width: 19vw;
   margin-left: auto;
-  font-size: 24px;
+  font-size: 1.8vw;
   font-weight: 500;
+}
+
+.nav-item {
+  font-size: 1.8vw;
+  font-weight: 500;
+  cursor: pointer;
 }

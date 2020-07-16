@@ -4,8 +4,8 @@
   background: #f4f4f4;
   width: 100%;
   height: 6vh;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-top-left-radius: 0.8vw;
+  border-top-right-radius: 0.8vw;
 }
 
 .icon {
@@ -26,7 +26,7 @@
 .tabs-container {
   display: flex;
   flex-direction: row;
-  height: 4vh;
+  height: 5vh;
   align-self: flex-end;
 }
 
@@ -40,6 +40,7 @@
   border: none;
   cursor: pointer;
   outline: none;
+  margin: 0;
 }
 
 .tab-icon {
@@ -58,7 +59,7 @@
 
 .tab-text {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 1.2vw;
   opacity: 0.7;
   margin-left: 0.8vw;
   pointer-events: none;
@@ -66,6 +67,6 @@
 
 .active-tab {
   background: white;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-top-left-radius: 1vw;
+  border-top-right-radius: 1vw;
 }
