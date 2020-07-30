@@ -1,21 +1,24 @@
 import React from "react";
 import "./FeaturedArtcle.scss";
 
-export default function FeaturedArticle() {
+export default function FeaturedArticle({
+  title,
+  imgSrc,
+  category,
+  time,
+  contentLink,
+}) {
+  console.log(time, category);
+  const selectPost = () => window.open(contentLink, "_blank");
   return (
-    <div className="featured-container">
-      <p className="featured-title">
-        Morning Routine That Completely Changed My Life
-      </p>
+    <div className="featured-container" onClick={selectPost}>
+      <p className="featured-title">{title}</p>
       <div className="image-container">
-        <img
-          className="featured-image"
-          src="https://images.unsplash.com/photo-1582778562829-d017b9105852?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=4178&q=80"
-        />
+        <img className="featured-image" src={imgSrc} />
       </div>
       <div className="featured-details">
-        <p className="featured-cat">Productivity</p>
-        <p className="featured-time">7 min read</p>
+        <p className="featured-cat">{category}</p>
+        <p className="featured-time">{`${time} min read`}</p>
       </div>
     </div>
   );

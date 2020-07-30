@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   ALL,
   BACKEND,
   FRONTEND,
   INFRASTRUCTURE,
-  ARCHITECTURE,
   PRODUCTIVITY,
   LIFE,
 } from "../utils/categories.js";
@@ -14,7 +13,8 @@ import SingleBlog from "./SingleBlog.js";
 
 export default function BlogTab() {
   const [activeFilter, setActiveFilter] = useState(ALL);
-
+  const [posts, setPosts] = useState([]);
+  const [displayPosts, setDisplayPosts] = useState([]);
   const [allClassName, setAllClassName] = useState(
     "cat-button cat-button-active"
   );
@@ -23,15 +23,33 @@ export default function BlogTab() {
   const [infrastructureClassName, setInfrastructureClassName] = useState(
     "cat-button"
   );
-  const [architectureClassName, setArchitectureClassName] = useState(
-    "cat-button"
-  );
   const [productivityClassName, setProductivityClassName] = useState(
     "cat-button"
   );
   const [lifeClassName, setLifeClassName] = useState("cat-button");
 
-  const setActiveCSS = (chosenFilter) => {
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch("http://api.irtizahafiz.com/posts");
+      const responseJson = await response.json();
+      setPosts(responseJson);
+      setDisplayPosts(responseJson);
+    }
+    fetchData();
+  }, []);
+
+  const setSelectedFilter = (chosenFilter) => {
+    console.log("Hello");
+    console.log(chosenFilter);
+    if (chosenFilter === ALL) {
+      setDisplayPosts(posts);
+    } else {
+      const filteredPosts = posts.filter((post) => {
+        return post["topic"] === chosenFilter.toLowerCase();
+      });
+      setDisplayPosts(filteredPosts);
+    }
+
     chosenFilter === ALL
       ? setAllClassName("cat-button cat-button-active")
       : setAllClassName("cat-button");
@@ -44,9 +62,6 @@ export default function BlogTab() {
     chosenFilter === INFRASTRUCTURE
       ? setInfrastructureClassName("cat-button cat-button-active")
       : setInfrastructureClassName("cat-button");
-    chosenFilter === ARCHITECTURE
-      ? setArchitectureClassName("cat-button cat-button-active")
-      : setArchitectureClassName("cat-button");
     chosenFilter === PRODUCTIVITY
       ? setProductivityClassName("cat-button cat-button-active")
       : setProductivityClassName("cat-button");
@@ -54,7 +69,7 @@ export default function BlogTab() {
       ? setLifeClassName("cat-button cat-button-active")
       : setLifeClassName("cat-button");
   };
-
+  console.log(displayPosts);
   return (
     <div className="blogs-container">
       <div className="introduction-container">
@@ -76,74 +91,70 @@ export default function BlogTab() {
         <button
           id={ALL}
           className={allClassName}
-          onClick={(e) => setActiveCSS(e.target.id)}
+          onClick={(e) => setSelectedFilter(e.target.id)}
         >
           {ALL}
         </button>
         <button
           id={BACKEND}
           className={backendClassName}
-          onClick={(e) => setActiveCSS(e.target.id)}
+          onClick={(e) => setSelectedFilter(e.target.id)}
         >
           {BACKEND}
         </button>
         <button
           id={FRONTEND}
           className={frontendClassName}
-          onClick={(e) => setActiveCSS(e.target.id)}
+          onClick={(e) => setSelectedFilter(e.target.id)}
         >
           {FRONTEND}
         </button>
         <button
           id={INFRASTRUCTURE}
           className={infrastructureClassName}
-          onClick={(e) => setActiveCSS(e.target.id)}
+          onClick={(e) => setSelectedFilter(e.target.id)}
         >
           {INFRASTRUCTURE}
         </button>
-        <button
-          id={ARCHITECTURE}
-          className={architectureClassName}
-          onClick={(e) => setActiveCSS(e.target.id)}
-        >
-          {ARCHITECTURE}
-        </button>
+
         <button
           id={PRODUCTIVITY}
           className={productivityClassName}
-          onClick={(e) => setActiveCSS(e.target.id)}
+          onClick={(e) => setSelectedFilter(e.target.id)}
         >
           {PRODUCTIVITY}
         </button>
         <button
           id={LIFE}
           className={lifeClassName}
-          onClick={(e) => setActiveCSS(e.target.id)}
+          onClick={(e) => setSelectedFilter(e.target.id)}
         >
           {LIFE}
         </button>
       </div>
-      <FeaturedArticle />
-      <SingleBlog
-        imgSrc="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80"
-        category="Productivity"
-        title="Morning Routine That Completely Changed My Life"
-        summary="Designing a good morning routine is the first step you must take to
-        totally change your life today."
-      />
-      <SingleBlog
-        imgSrc="https://images.unsplash.com/photo-1499443724512-9a7fb762ad6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2767&q=80"
-        category="Infrastructure"
-        title="Dockerizing Your First Node Application"
-        summary="All you need to understand to implement your first Dockerized Application."
-      />
-      <SingleBlog
-        imgSrc="https://images.unsplash.com/photo-1505238680356-667803448bb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80"
-        category="Life"
-        title="5 Lessons From My First 5 Months As A Software Engineer At Yelp"
-        summary="Everything that I have learned in my first 5 months at Yelp after graduation college."
-      />
-      <hr style={{ border: "1px solid #EDEDED" }} />
+      {displayPosts.length > 0 && (
+        <FeaturedArticle
+          title={displayPosts[0]["title"]}
+          imgSrc={displayPosts[0]["image"]}
+          category={displayPosts[0]["topic"]}
+          time={displayPosts[0]["readTime"]}
+          contentLink={displayPosts[0]["contentLink"]}
+        />
+      )}
+      {displayPosts.map((post, index) => {
+        if (index > 0) {
+          return (
+            <SingleBlog
+              key={index}
+              imgSrc={post["image"]}
+              category={post["topic"]}
+              title={post["title"]}
+              summary={post["summary"]}
+              link={post["contentLink"]}
+            ></SingleBlog>
+          );
+        }
+      })}
     </div>
   );
 }
