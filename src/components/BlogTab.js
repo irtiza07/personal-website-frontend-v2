@@ -30,7 +30,7 @@ export default function BlogTab() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("http://api.irtizahafiz.com/posts");
+      const response = await fetch("https://api.irtizahafiz.com/posts");
       const responseJson = await response.json();
       setPosts(responseJson);
       setDisplayPosts(responseJson);
