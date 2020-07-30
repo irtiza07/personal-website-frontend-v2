@@ -8,7 +8,6 @@ export default function FeaturedArticle({
   time,
   contentLink,
 }) {
-  console.log(time, category);
   const selectPost = () => window.open(contentLink, "_blank");
   return (
     <div className="featured-container" onClick={selectPost}>

@@ -12,7 +12,6 @@ import FeaturedArticle from "./FeaturedArticle.js";
 import SingleBlog from "./SingleBlog.js";
 
 export default function BlogTab() {
-  const [activeFilter, setActiveFilter] = useState(ALL);
   const [posts, setPosts] = useState([]);
   const [displayPosts, setDisplayPosts] = useState([]);
   const [allClassName, setAllClassName] = useState(
