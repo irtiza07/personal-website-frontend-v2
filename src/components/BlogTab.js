@@ -38,8 +38,6 @@ export default function BlogTab() {
   }, []);
 
   const setSelectedFilter = (chosenFilter) => {
-    console.log("Hello");
-    console.log(chosenFilter);
     if (chosenFilter === ALL) {
       setDisplayPosts(posts);
     } else {
@@ -68,7 +66,6 @@ export default function BlogTab() {
       ? setLifeClassName("cat-button cat-button-active")
       : setLifeClassName("cat-button");
   };
-  console.log(displayPosts);
   return (
     <div className="blogs-container">
       <div className="introduction-container">
