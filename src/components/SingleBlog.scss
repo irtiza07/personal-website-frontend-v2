@@ -1,7 +1,7 @@
 .blog-container {
   display: flex;
   flex-direction: row;
-  margin-top: 5vh;
+  margin-top: 1vw;
   cursor: pointer;
   justify-content: center;
 }
@@ -22,19 +22,27 @@
   border-radius: 0.8vw;
 }
 .blog-cats {
-  font-size: 1.7vw;
-  opacity: 0.7;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.8vw;
   color: gray;
 }
 .blog-title {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
   font-size: 2vw;
   color: #000000;
   opacity: 0.7;
   margin-top: 0;
+  margin-bottom: 1vw;
 }
 .blog-summary {
-  font-weight: 500;
-  font-size: 1.5vw;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1vw;
   color: #000000;
   opacity: 0.7;
   margin-top: 0vw;

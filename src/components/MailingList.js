@@ -6,7 +6,7 @@ export default function MailingList() {
     <div className="mailing-container">
       <p className="mailing-title">
         Want to hear more from me? <br /> Join my personal{" "}
-        <span style={{ color: "#1591FF" }}>mailing list</span> &#x1F447;
+        <span style={{ color: "#FF4343" }}>mailing list</span> &#x1F447;
         &#x1F447; &#x1F447;
       </p>
       <div className="mailing-form-container">

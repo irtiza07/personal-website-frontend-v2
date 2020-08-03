@@ -3,14 +3,15 @@
   flex-direction: column;
   margin-top: 2vh;
   align-self: center;
+  border-top: 1px solid #e7e7e7;
 }
 .mailing-title {
+  font-family: Rubik;
   font-style: normal;
-  font-weight: bold;
-  font-size: 4vw;
+  font-weight: 500;
+  font-size: 2vw;
   text-align: center;
   color: #37353e;
-  letter-spacing: 0.1vw;
 }
 .mailing-form-container {
   display: flex;
@@ -33,7 +34,7 @@
   outline: none;
 }
 .mailing-cta {
-  background: #1591ff;
+  background: #ff4343;
   border-radius: 0.3vw;
   border-left: none;
   width: 10vw;
@@ -43,9 +44,10 @@
   cursor: pointer;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  font-family: Rubik;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.5vw;
+  font-size: 1.1vw;
   text-align: center;
   color: #ffffff;
 }

@@ -6,7 +6,7 @@ export default function Banner() {
     <div className="banner-container">
       <p className="subtitle">Blog. Code. Repeat</p>
       <p className="title">
-        Hey there! I'm <span style={{ color: "#1591FF" }}>Irtiza</span>, a
+        Hey there! I'm <span style={{ color: "#FF4343" }}>Irtiza</span>, a
         software engineer @ Yelp.
       </p>
     </div>

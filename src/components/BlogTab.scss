@@ -20,7 +20,7 @@
   margin-left: 1.5vw;
 }
 .intro-button {
-  background-color: #1591ff;
+  background-color: #ff4343;
   width: 15vw;
   height: 4vw;
   outline: none;
@@ -37,12 +37,12 @@
   height: 8vw;
 }
 .name-text {
+  font-style: normal;
   font-weight: 500;
   font-size: 2.9vw;
   color: #000000;
   margin: 0;
   margin-bottom: 1vh;
-  letter-spacing: 0.1vw;
 }
 .article-count-text {
   font-weight: 500;
@@ -50,7 +50,6 @@
   color: #737373;
   opacity: 0.7;
   margin: 0;
-  letter-spacing: 0.1vw;
 }
 .heading {
   font-weight: 600;
@@ -65,7 +64,7 @@
   justify-content: center;
 }
 .cat-button {
-  &:hover {
+  &:hover:not(:focus) {
     color: gray;
   }
   cursor: pointer;
@@ -77,7 +76,6 @@
   margin-left: 2vw;
 }
 .cat-button-active {
-  background-color: #1591ff;
-  border-radius: 0.8vw;
-  color: white;
+  border-bottom: 8px solid #ff4343;
+  border-radius: 0;
 }

@@ -11,9 +11,9 @@ export default function FeaturedArticle({
   const selectPost = () => window.open(contentLink, "_blank");
   return (
     <div className="featured-container" onClick={selectPost}>
-      <p className="featured-title">{title}</p>
       <div className="image-container">
         <img className="featured-image" src={imgSrc} />
+        <p className="featured-title">{title}</p>
       </div>
       <div className="featured-details">
         <p className="featured-cat">{category}</p>
