@@ -2,9 +2,10 @@
   padding-left: 6vw;
   padding-right: 6vw;
   padding-top: 3vw;
-  background: #ffffff;
+  background-color: #ffffff;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  z-index: -2; //!!TODO: NO IDEA WHATS HAPPENING HERE
 }
 .introduction-container {
   display: flex;
