@@ -1,11 +1,11 @@
 .browser-nav-container {
   display: flex;
   flex-direction: row;
-  background: #f4f4f4;
+  background: #dadada;
   width: 100%;
   height: 6vh;
-  border-top-left-radius: 0.8vw;
-  border-top-right-radius: 0.8vw;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .icon {
@@ -28,11 +28,12 @@
   flex-direction: row;
   height: 5vh;
   align-self: flex-end;
+  background: #dadada;
 }
 
 .tab-button {
   display: flex;
-  background: #f4f4f4;
+  background: #dadada;
   flex-direction: row;
   align-items: center;
   width: 12vw;
@@ -63,6 +64,7 @@
   opacity: 0.7;
   margin-left: 0.8vw;
   pointer-events: none;
+  color: #333333;
 }
 
 .active-tab {

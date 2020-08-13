@@ -7,7 +7,7 @@
   padding-right: 2vw;
   padding-left: 2vw;
   font-size: 3vw;
-  color: #000000;
+  color: #333333;
 }
 
 .links-container {
@@ -15,16 +15,17 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  width: 19vw;
+  width: 24vw;
   margin-left: auto;
   font-size: 1.8vw;
   font-weight: 500;
 }
 
 .nav-item {
-  font-size: 1.8vw;
+  font-size: 1.6vw;
   font-family: Rubik;
   font-style: normal;
   font-weight: normal;
+  color: #333333;
   cursor: pointer;
 }

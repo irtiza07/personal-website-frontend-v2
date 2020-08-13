@@ -8,8 +8,8 @@ export default function TopNavBar() {
       <p>hafiz.</p>
       <div className="links-container">
         <p className="nav-item">Blog</p>
-        <p className="nav-item">Work</p>
-        <p className="nav-item">Resume</p>
+        <p className="nav-item">Projects</p>
+        <p className="nav-item">Thoughts</p>
       </div>
     </div>
   );

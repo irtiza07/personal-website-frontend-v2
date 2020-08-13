@@ -1,16 +1,10 @@
 import React, { useState } from "react";
-import {
-  BLOG_TAB,
-  PROJECT_TAB,
-  RESUME_TAB,
-  THOUGHTS_TAB,
-} from "../utils/constants";
+import { BLOG_TAB, PROJECT_TAB, THOUGHTS_TAB } from "../utils/constants";
 import "./BrowserNav.scss";
 
 export default function BrowserNav({ activeTab, handleTabChange }) {
   const [blogClassName, setBlogClassName] = useState("tab-button active-tab");
   const [projectClassName, setProjectClassName] = useState("tab-button");
-  const [resumeClassName, setResumeClassName] = useState("tab-button");
   const [thoughtsClassName, setThoughtsClassName] = useState("tab-button");
 
   const setActiveTabCss = (newActiveTab) => {
@@ -20,9 +14,6 @@ export default function BrowserNav({ activeTab, handleTabChange }) {
     newActiveTab === PROJECT_TAB
       ? setProjectClassName("tab-button active-tab")
       : setProjectClassName("tab-button");
-    newActiveTab === RESUME_TAB
-      ? setResumeClassName("tab-button active-tab")
-      : setResumeClassName("tab-button");
     newActiveTab === THOUGHTS_TAB
       ? setThoughtsClassName("tab-button active-tab")
       : setThoughtsClassName("tab-button");
@@ -68,24 +59,7 @@ export default function BrowserNav({ activeTab, handleTabChange }) {
             src={require("../assets/tab-icon-draft.png")}
           />
           <p className="tab-text">Projects</p>
-          {activeTab !== PROJECT_TAB && activeTab !== RESUME_TAB && (
-            <img
-              className="tab-divider"
-              src={require("../assets/divider.png")}
-            />
-          )}
-        </button>
-        <button
-          id={RESUME_TAB}
-          className={resumeClassName}
-          onClick={(e) => onTabClick(e)}
-        >
-          <img
-            className="tab-icon"
-            src={require("../assets/tab-icon-draft.png")}
-          />
-          <p className="tab-text">Resume</p>
-          {activeTab !== RESUME_TAB && activeTab !== THOUGHTS_TAB && (
+          {activeTab !== PROJECT_TAB && activeTab !== THOUGHTS_TAB && (
             <img
               className="tab-divider"
               src={require("../assets/divider.png")}

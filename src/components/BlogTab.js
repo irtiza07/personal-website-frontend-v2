@@ -10,6 +10,7 @@ import {
 import "./BlogTab.scss";
 import FeaturedArticle from "./FeaturedArticle.js";
 import SingleBlog from "./SingleBlog.js";
+import MailingList from "./MailingList";
 
 export default function BlogTab() {
   const [posts, setPosts] = useState([]);
@@ -151,6 +152,8 @@ export default function BlogTab() {
           );
         }
       })}
+      <hr style={{ border: "1px solid #E9E9E9" }} />
+      <MailingList />
     </div>
   );
 }

@@ -4,10 +4,6 @@ import "./Footer.scss";
 export default function Footer() {
   return (
     <div className="footer-container">
-      <img
-        className="footer-illustration"
-        src={require("../assets/footer-illustration.png")}
-      />
       <div className="contact-container">
         <p className="socials-header">Get in touch</p>
         <a className="socials-link">Instagram</a>
