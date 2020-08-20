@@ -83,7 +83,7 @@ export default function BlogTab() {
         <button className="intro-button">Say Hi</button>
       </div>
       <p className="heading">Recent Articles</p>
-      <hr style={{ border: "1px solid #EDEDED" }} />
+      <hr style={{ border: "1px solid #EDEDED", width: "55vw" }} />
       <div className="filters-container">
         <button
           id={ALL}

@@ -4,14 +4,15 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin-top: 2vw;
+  margin-top: 5vw;
+  margin-bottom: 3vw;
 }
 .featured-title {
   font-weight: 500;
-  font-size: 32px;
+  font-size: 2vw;
   color: white;
   letter-spacing: 0.1vw;
-  width: 24vw;
+  width: 36vw;
   position: absolute;
   bottom: 2px;
   left: 36px;
@@ -20,7 +21,7 @@
 .image-container {
   position: relative;
   display: inline-block;
-  width: 55vw;
+  width: 62vw;
   height: 33vh;
 }
 .image-container:after {
@@ -46,18 +47,20 @@
 .featured-details {
   display: flex;
   flex-direction: row;
-  width: 55vw;
+  width: 62vw;
 }
 .featured-cat {
+  font-family: Rubik;
+  font-style: normal;
   font-weight: normal;
-  font-size: 1.2vw;
-  color: #000000;
-  opacity: 0.7;
+  font-size: 1.5vw;
+  color: #333333;
 }
 .featured-time {
+  font-family: Rubik;
+  font-style: normal;
   font-weight: normal;
-  font-size: 1.2vw;
-  color: #000000;
-  opacity: 0.7;
+  font-size: 1.5vw;
+  color: #333333;
   margin-left: auto;
 }
