@@ -11,6 +11,7 @@ import "./BlogTab.scss";
 import FeaturedArticle from "./FeaturedArticle.js";
 import SingleBlog from "./SingleBlog.js";
 import MailingList from "./MailingList";
+import ContactForm from "./ContactForm";
 
 export default function BlogTab() {
   const [posts, setPosts] = useState([]);
@@ -27,6 +28,8 @@ export default function BlogTab() {
     "cat-button"
   );
   const [lifeClassName, setLifeClassName] = useState("cat-button");
+
+  const [showContactForm, setShowContactForm] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -80,8 +83,18 @@ export default function BlogTab() {
             <p className="article-count-text">10 articles</p>
           </div>
         </div>
-        <button className="intro-button">Say Hi</button>
+        <button
+          className="intro-button"
+          onClick={(e) => setShowContactForm(true)}
+        >
+          Say Hi
+        </button>
       </div>
+      {showContactForm && (
+        <ContactForm
+          setFormVisibility={(visibility) => setShowContactForm(visibility)}
+        />
+      )}
       <p className="heading">Recent Articles</p>
       <hr style={{ border: "1px solid #EDEDED", width: "55vw" }} />
       <div className="filters-container">

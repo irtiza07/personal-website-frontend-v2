@@ -31,7 +31,7 @@
   font-size: 1.8vw;
   width: 15vw;
   height: 4vw;
-  outline: none;
+  outline: none !important;
   border: none;
   color: white;
   border-radius: 0.8vw;
@@ -87,7 +87,7 @@
   font-size: 1.3vw;
   background-color: white;
   cursor: pointer;
-  outline: none;
+  outline: none !important;
   border: none;
   margin-left: 1vw;
 }
