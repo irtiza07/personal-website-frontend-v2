@@ -39,7 +39,18 @@ export default function ContactForm({ setFormVisibility }) {
               className="input-container message-input"
               onChange={(e) => setMessage(e.target.value)}
             />
-            <div className="footer-container">
+            <div className="cta-container">
+              <a href="https://instagram.com/irtiza.hafiz" target="_blank">
+                <img
+                  src={require("../assets/ig.png")}
+                  width={32}
+                  height={32}
+                ></img>
+              </a>
+              <button className={ctaStyle}>Send</button>
+            </div>
+
+            {/* <div className="footer-container">
               <a href="https://instagram.com/irtiza.hafiz" target="_blank">
                 <img
                   src={require("../assets/ig.png")}
@@ -48,7 +59,7 @@ export default function ContactForm({ setFormVisibility }) {
                 ></img>
               </a>
               <button className={ctaStyle}>Send</button>
-            </div>
+            </div> */}
           </div>
         </div>
       </Modal.Body>
