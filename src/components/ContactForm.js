@@ -11,6 +11,17 @@ export default function ContactForm({ setFormVisibility }) {
   const ctaStyle =
     name && email && message ? "send-button send-button-active" : "send-button";
 
+  const submitForm = () => {
+    fetch("https://api.irtizahafiz.com/contact", {
+      method: "post",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name: name, email: email, message: message }),
+    });
+    setFormVisibility(false);
+  };
   return (
     <Modal
       show={true}
@@ -47,7 +58,9 @@ export default function ContactForm({ setFormVisibility }) {
                   height={32}
                 ></img>
               </a>
-              <button className={ctaStyle}>Send</button>
+              <button className={ctaStyle} onClick={submitForm}>
+                Send
+              </button>
             </div>
 
             {/* <div className="footer-container">
