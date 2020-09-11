@@ -41,7 +41,7 @@ export default function BrowserNav({ activeTab, handleTabChange }) {
             className="tab-icon"
             src={require("../assets/tab-icon-draft.png")}
           />
-          <p className="tab-text">@irtizahafiz</p>
+          <p className="tab-text">Writing</p>
           {activeTab !== BLOG_TAB && activeTab !== PROJECT_TAB && (
             <img
               className="tab-divider"
@@ -58,7 +58,7 @@ export default function BrowserNav({ activeTab, handleTabChange }) {
             className="tab-icon"
             src={require("../assets/tab-icon-draft.png")}
           />
-          <p className="tab-text">Projects</p>
+          <p className="tab-text">Newsletter</p>
           {activeTab !== PROJECT_TAB && activeTab !== THOUGHTS_TAB && (
             <img
               className="tab-divider"
@@ -75,7 +75,7 @@ export default function BrowserNav({ activeTab, handleTabChange }) {
             className="tab-icon"
             src={require("../assets/tab-icon-draft.png")}
           />
-          <p className="tab-text">Thoughts</p>
+          <p className="tab-text">YouTube</p>
         </button>
       </div>
     </div>
