@@ -6,6 +6,11 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   border-top: none;
+
+  @media only screen and (max-device-width: 600px) {
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+  }
 }
 .introduction-container {
   display: flex;
