@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import BrowserNav from "./BrowserNav";
 import BlogTab from "./BlogTab";
-import ProjectTab from "./ProjectTab";
+import NewsletterTab from "./NewsletterTab";
 import ThoughtsTab from "./ThoughtsTab";
-import { BLOG_TAB, PROJECT_TAB, THOUGHTS_TAB } from "../utils/constants";
+import { BLOG_TAB, NEWSLETTER_TAB, THOUGHTS_TAB } from "../utils/constants";
 import "./Browser.scss";
 
 export default function Browser() {
@@ -16,7 +16,7 @@ export default function Browser() {
     <div className="browser-container">
       <BrowserNav activeTab={activeTab} handleTabChange={handleTabChange} />
       {activeTab === BLOG_TAB && <BlogTab />}
-      {activeTab === PROJECT_TAB && <ProjectTab />}
+      {activeTab === NEWSLETTER_TAB && <NewsletterTab />}
       {activeTab === THOUGHTS_TAB && <ThoughtsTab />}
     </div>
   );

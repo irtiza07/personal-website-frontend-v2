@@ -1,6 +1,14 @@
 import React, { useState } from "react";
+import toast from "react-simple-toasts";
+import { toastConfig } from "react-simple-toasts";
+
 import "./MailingList.scss";
 import { CONVERTKIT_API_KEY } from "../utils/constants";
+
+toastConfig({
+  time: 5000,
+  // className: "my-toast-message",
+});
 
 export default function MailingList() {
   const [email, setEmail] = useState("");
@@ -12,9 +20,13 @@ export default function MailingList() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ api_key: CONVERTKIT_API_KEY, email: email }),
-    }).then(() => {
-      setEmail("");
-      console.log("Submitted");
+    }).then((response) => {
+      if (response.status === 200) {
+        setEmail("");
+        toast("Email submitted successfully");
+      } else {
+        toast("Email submission failed");
+      }
     });
   };
   const handleEmail = (e) => {
