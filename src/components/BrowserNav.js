@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { BLOG_TAB, NEWSLETTER_TAB, THOUGHTS_TAB } from "../utils/constants";
+import { BLOG_TAB, NEWSLETTER_TAB, YOUTUBE_TAB } from "../utils/constants";
 import "./BrowserNav.scss";
 
 export default function BrowserNav({ activeTab, handleTabChange }) {
   const [blogClassName, setBlogClassName] = useState("tab-button active-tab");
   const [newsletterClassName, setNewsletterClassName] = useState("tab-button");
-  const [thoughtsClassName, setThoughtsClassName] = useState("tab-button");
+  const [youTubeClassName, setYouTubeClassName] = useState("tab-button");
 
   const setActiveTabCss = (newActiveTab) => {
     newActiveTab === BLOG_TAB
@@ -14,9 +14,9 @@ export default function BrowserNav({ activeTab, handleTabChange }) {
     newActiveTab === NEWSLETTER_TAB
       ? setNewsletterClassName("tab-button active-tab")
       : setNewsletterClassName("tab-button");
-    newActiveTab === THOUGHTS_TAB
-      ? setThoughtsClassName("tab-button active-tab")
-      : setThoughtsClassName("tab-button");
+    newActiveTab === YOUTUBE_TAB
+      ? setYouTubeClassName("tab-button active-tab")
+      : setYouTubeClassName("tab-button");
   };
 
   const onTabClick = (event) => {
@@ -59,7 +59,7 @@ export default function BrowserNav({ activeTab, handleTabChange }) {
             src={require("../assets/tab-icon-draft.png")}
           />
           <p className="tab-text">Newsletter</p>
-          {activeTab !== NEWSLETTER_TAB && activeTab !== THOUGHTS_TAB && (
+          {activeTab !== NEWSLETTER_TAB && activeTab !== YOUTUBE_TAB && (
             <img
               className="tab-divider"
               src={require("../assets/divider.png")}
@@ -67,8 +67,8 @@ export default function BrowserNav({ activeTab, handleTabChange }) {
           )}
         </button>
         <button
-          id={THOUGHTS_TAB}
-          className={thoughtsClassName}
+          id={YOUTUBE_TAB}
+          className={youTubeClassName}
           onClick={(e) => onTabClick(e)}
         >
           <img
