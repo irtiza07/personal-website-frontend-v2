@@ -14,11 +14,11 @@ export default function YouTubeAnalytics() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `https://youtube.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${YOUTUBE_API_KEY}`
+        "https://api.irtizahafiz.com/youtube_analytics"
       );
       const responseJson = await response.json();
       console.log(responseJson);
-      const statistics = responseJson["items"][0]["statistics"];
+      const statistics = responseJson["statistics"];
       setViewCount(statistics["viewCount"]);
       setSubscriberCount(statistics["subscriberCount"]);
       setVideoCount(statistics["videoCount"]);
