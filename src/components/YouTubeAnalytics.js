@@ -17,7 +17,6 @@ export default function YouTubeAnalytics() {
         "https://api.irtizahafiz.com/youtube_analytics"
       );
       const responseJson = await response.json();
-      console.log(responseJson);
       const statistics = responseJson["statistics"];
       setViewCount(statistics["viewCount"]);
       setSubscriberCount(statistics["subscriberCount"]);
@@ -25,7 +24,6 @@ export default function YouTubeAnalytics() {
     }
     fetchData();
   }, []);
-  console.log(viewCount, subscriberCount, videoCount);
   return (
     <div className="analytics-container">
       <StatItem value={subscriberCount} label="Subscribers"></StatItem>

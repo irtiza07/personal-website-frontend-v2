@@ -2,27 +2,17 @@ import React, { useState } from "react";
 import { BLOG_TAB, NEWSLETTER_TAB, YOUTUBE_TAB } from "../utils/constants";
 import "./BrowserNav.scss";
 
-export default function BrowserNav({ activeTab, handleTabChange }) {
-  const [blogClassName, setBlogClassName] = useState("tab-button active-tab");
-  const [newsletterClassName, setNewsletterClassName] = useState("tab-button");
-  const [youTubeClassName, setYouTubeClassName] = useState("tab-button");
-
-  const setActiveTabCss = (newActiveTab) => {
-    newActiveTab === BLOG_TAB
-      ? setBlogClassName("tab-button active-tab")
-      : setBlogClassName("tab-button");
-    newActiveTab === NEWSLETTER_TAB
-      ? setNewsletterClassName("tab-button active-tab")
-      : setNewsletterClassName("tab-button");
-    newActiveTab === YOUTUBE_TAB
-      ? setYouTubeClassName("tab-button active-tab")
-      : setYouTubeClassName("tab-button");
-  };
-
+export default function BrowserNav({
+  activeTab,
+  onActiveTabChange,
+  blogClassName,
+  newsletterClassName,
+  youTubeClassName,
+}) {
   const onTabClick = (event) => {
-    handleTabChange(event.target.id);
-    setActiveTabCss(event.target.id);
+    onActiveTabChange(event.target.id);
   };
+  console.log(activeTab);
 
   return (
     <div className="browser-nav-container">
