@@ -20,7 +20,7 @@ export default function YouTubeTab() {
 
   return (
     <div className="outer-container">
-      <h1 className="headline">Code With MD</h1>
+      <h1 className="headline">Code with Irtiza</h1>
       <YouTubeAnalytics />
       <p className="description">
         I create YouTube videos related to programming, system design and
