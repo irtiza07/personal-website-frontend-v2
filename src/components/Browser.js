@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import BrowserNav from "./BrowserNav";
 import BlogTab from "./BlogTab";
-import NewsletterTab from "./NewsletterTab";
+import ContactTab from "./ContactTab";
 import YouTubeTab from "./YouTubeTab";
-import { BLOG_TAB, NEWSLETTER_TAB, YOUTUBE_TAB } from "../utils/constants";
+import { BLOG_TAB, CONTACT_TAB, YOUTUBE_TAB } from "../utils/constants";
 import "./Browser.scss";
 
 export default function Browser({
   activeTab,
   onActiveTabChange,
   blogClassName,
-  newsletterClassName,
+  contactClassName,
   youTubeClassName,
 }) {
   const handleTabChange = (new_active_tab) => {
@@ -22,11 +22,11 @@ export default function Browser({
         activeTab={activeTab}
         onActiveTabChange={handleTabChange}
         blogClassName={blogClassName}
-        newsletterClassName={newsletterClassName}
+        contactClassName={contactClassName}
         youTubeClassName={youTubeClassName}
       />
       {activeTab === BLOG_TAB && <BlogTab />}
-      {activeTab === NEWSLETTER_TAB && <NewsletterTab />}
+      {activeTab === CONTACT_TAB && <ContactTab />}
       {activeTab === YOUTUBE_TAB && <YouTubeTab />}
     </div>
   );
