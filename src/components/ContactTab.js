@@ -1,12 +1,15 @@
 import React from "react";
+import MailingList from "./MailingList";
 import { Center, HStack, VStack, Heading, Link } from "@chakra-ui/react";
 
-export default function Footer() {
+export default function ContactTab() {
   return (
-    <Center marginTop={16} marginBottom={32}>
-      <VStack>
-        <Heading>Get in touch</Heading>
-        <HStack>
+    <Center background="white">
+      <VStack spacing={72}>
+        <Heading marginTop={24}>
+          If you want to reach out to me, here are my socials 👇
+        </Heading>
+        <HStack paddingBottom={60}>
           <Link href="http://irtizahafiz.medium.com" isExternal>
             Medium Blog
           </Link>
@@ -26,6 +29,7 @@ export default function Footer() {
             YouTube
           </Link>
         </HStack>
+        <MailingList />
       </VStack>
     </Center>
   );

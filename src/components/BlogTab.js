@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  ALL,
-  BACKEND,
-  FRONTEND,
-  INFRASTRUCTURE,
-  PRODUCTIVITY,
-  LIFE,
-} from "../utils/categories.js";
+import { ALL, PROGRAMMING, BLOG } from "../utils/categories.js";
 import "./BlogTab.scss";
 import FeaturedArticle from "./FeaturedArticle.js";
 import SingleBlog from "./SingleBlog.js";
@@ -19,15 +12,9 @@ export default function BlogTab() {
   const [allClassName, setAllClassName] = useState(
     "cat-button cat-button-active"
   );
-  const [backendClassName, setBackendClassName] = useState("cat-button");
-  const [frontendClassName, setFrontendClassName] = useState("cat-button");
-  const [infrastructureClassName, setInfrastructureClassName] = useState(
-    "cat-button"
-  );
-  const [productivityClassName, setProductivityClassName] = useState(
-    "cat-button"
-  );
-  const [lifeClassName, setLifeClassName] = useState("cat-button");
+  const [programmingClassName, setProgrammingClassName] =
+    useState("cat-button");
+  const [blogClassName, setBlogClassName] = useState("cat-button");
 
   const [showContactForm, setShowContactForm] = useState(false);
 
@@ -54,21 +41,12 @@ export default function BlogTab() {
     chosenFilter === ALL
       ? setAllClassName("cat-button cat-button-active")
       : setAllClassName("cat-button");
-    chosenFilter === BACKEND
-      ? setBackendClassName("cat-button cat-button-active")
-      : setBackendClassName("cat-button");
-    chosenFilter === FRONTEND
-      ? setFrontendClassName("cat-button cat-button-active")
-      : setFrontendClassName("cat-button");
-    chosenFilter === INFRASTRUCTURE
-      ? setInfrastructureClassName("cat-button cat-button-active")
-      : setInfrastructureClassName("cat-button");
-    chosenFilter === PRODUCTIVITY
-      ? setProductivityClassName("cat-button cat-button-active")
-      : setProductivityClassName("cat-button");
-    chosenFilter === LIFE
-      ? setLifeClassName("cat-button cat-button-active")
-      : setLifeClassName("cat-button");
+    chosenFilter === BLOG
+      ? setBlogClassName("cat-button cat-button-active")
+      : setBlogClassName("cat-button");
+    chosenFilter === PROGRAMMING
+      ? setProgrammingClassName("cat-button cat-button-active")
+      : setProgrammingClassName("cat-button");
   };
   return (
     <div className="blogs-container">
@@ -80,7 +58,7 @@ export default function BlogTab() {
           />
           <div className="intro-text-container">
             <p className="name-text">Irtiza Hafiz</p>
-            <p className="article-count-text">10 articles</p>
+            <p className="article-count-text">{posts.length} articles</p>
           </div>
         </div>
         <button
@@ -95,7 +73,7 @@ export default function BlogTab() {
           setFormVisibility={(visibility) => setShowContactForm(visibility)}
         />
       )}
-      <p className="heading">Recent Articles</p>
+      <p className="heading">All Articles</p>
       <hr style={{ border: "1px solid #EDEDED", width: "55vw" }} />
       <div className="filters-container">
         <button
@@ -106,40 +84,18 @@ export default function BlogTab() {
           {ALL}
         </button>
         <button
-          id={BACKEND}
-          className={backendClassName}
+          id={PROGRAMMING}
+          className={programmingClassName}
           onClick={(e) => setSelectedFilter(e.target.id)}
         >
-          {BACKEND}
+          {PROGRAMMING}
         </button>
         <button
-          id={FRONTEND}
-          className={frontendClassName}
+          id={BLOG}
+          className={blogClassName}
           onClick={(e) => setSelectedFilter(e.target.id)}
         >
-          {FRONTEND}
-        </button>
-        <button
-          id={INFRASTRUCTURE}
-          className={infrastructureClassName}
-          onClick={(e) => setSelectedFilter(e.target.id)}
-        >
-          {INFRASTRUCTURE}
-        </button>
-
-        <button
-          id={PRODUCTIVITY}
-          className={productivityClassName}
-          onClick={(e) => setSelectedFilter(e.target.id)}
-        >
-          {PRODUCTIVITY}
-        </button>
-        <button
-          id={LIFE}
-          className={lifeClassName}
-          onClick={(e) => setSelectedFilter(e.target.id)}
-        >
-          {LIFE}
+          {BLOG}
         </button>
       </div>
       {displayPosts.length > 0 && (
